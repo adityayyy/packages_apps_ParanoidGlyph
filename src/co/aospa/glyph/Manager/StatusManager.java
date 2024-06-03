@@ -33,9 +33,9 @@ public final class StatusManager {
     private static int[] batteryArray = new int[ResourceUtils.getInteger("glyph_settings_battery_levels_num")];
     private static int volumeLedLast = 0;
     private static int[] volumeArray = new int[ResourceUtils.getInteger("glyph_settings_volume_levels_num")];
-
+    private static boolean volumeLedActive = false;
+    private static boolean volumeLedUpdate = false;
     private static boolean callLedEnabled = false;
-
     public static boolean isAnimationActive() {
         return animationActive;
     }
@@ -110,6 +110,9 @@ public final class StatusManager {
 
     public static int[] getVolumeArray() {
         return volumeArray;
+    public static boolean isVolumeLedUpdate() {
+        return volumeLedUpdate;
+
     }
 
     public static void setVolumeArray(int[] volumeArrayNext) {
